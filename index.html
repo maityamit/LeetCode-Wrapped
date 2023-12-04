@@ -55,6 +55,8 @@
             color: #1776EF;
             margin-bottom: 10px;
             font-family: 'Irish Grover', sans-serif;
+            white-space: nowrap;
+            overflow: hidden;
         }
         
         
@@ -62,12 +64,12 @@
             font-size: 20px;
             padding: 10px 15px;
             border: none;
-            width: 18%;
             border-radius: 25px;
             background-color: #ffffff;
             color: #FFC01E;
             cursor: pointer;
             transition: background-color 0.3s;
+            white-space: nowrap;
         }
 
         .button:hover {
@@ -252,7 +254,7 @@
         <div id="download_content_01" class="card _mainBox">
 
             <div style="display: flex; justify-content: space-between; align-items: center;">
-                <p style="margin-top: 20px; margin-left: 15px;">Hello Amit Maity </p>
+                <p id="userNameset01" style="margin-top: 20px; margin-left: 15px;">Hello Amit Maity </p>
                 <img  id="download_button_01" style="margin-right: 5%; width: 30px;" src="images/download icon.png"/>
             </div>
         
@@ -292,7 +294,7 @@
     
         <div id="download_content_02" class="card _mainBox">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-                <p style="margin-top: 20px; margin-left: 15px;">Hello Amit Maity </p>
+                <p id="userNameset02" style="margin-top: 20px; margin-left: 15px;">Hello Amit Maity </p>
                 <img id="download_button_02" style="margin-right: 5%; width: 30px;" src="images/download icon.png"/>
             </div>
             <p style="margin-left: 15px;">It's wrapped time.....</p>
@@ -431,6 +433,8 @@ document.getElementById('q2maximum_rating').textContent = maxRating;
 document.getElementById('q2highest_rank').textContent = highestRank;
 document.getElementById('q2lowest_rank').textContent = lowestRank;
 document.getElementById('q2active_month').textContent = mostActiveMonthContest
+document.getElementById('userNameset01').textContent = "Hello "+value
+document.getElementById('userNameset02').textContent = "Hello "+value
 
 
 document.getElementById('q1total_solved').textContent = totalQuestionsSolved
@@ -444,14 +448,15 @@ document.getElementById('q1active_day').textContent = mostActiveDay
 
 
             } catch (error) {
+               alert("UserName Doesn't exist!")
                console.error("Error:", error.message);
              }
         });
 
 
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
+        // document.addEventListener('contextmenu', function(e) {
+        //     e.preventDefault();
+        // });
        
     </script>
 
