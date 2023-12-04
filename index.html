@@ -111,6 +111,7 @@
 
         footer {
             margin-bottom: 10px;
+            margin-top: 10px;
             text-align: center;
         }
 
@@ -146,38 +147,22 @@
             margin-top: -20px;
         }
 
-        .container_second .card {
+        .card {
             background-color: #212121;
             box-shadow: 0 4px 8px rgba(68, 67, 67, 0.656);
             padding: 10px;
-            margin: 90px;
-            border-radius: 25px;
+            margin: 10px;
+            border-radius: 5px;
             max-width: 520px; /* Set maximum width for the card */
             width: 100%; /* Adjust the width to leave space for both cards */
             display: inline-block; /* Make the cards appear inline */
             box-sizing: border-box; /* Include padding and border in the width */
         }
 
-        .container_second .contain_two_box{
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            padding: 20px;
-        }
-
         ._mainBox{
             flex: 1;
         }
 
-        @media (max-width: 768px) {
-            .contain_two_box {
-                flex-direction: column;
-            }
-
-            ._mainBox {
-                margin-bottom: 20px;
-            }
-        }
 
         .box, .box1, .box2 {
                 margin-bottom: 15px;
@@ -207,6 +192,7 @@
          color: #a19e9e;
         }
 
+
         .container_second span{
             color: yellow;
             font-weight: bold;
@@ -219,6 +205,25 @@
             align-items: center;
             flex-direction: column;
             margin-top: 20px;
+        }
+
+        .container2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inner-container2 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .inner-container2 {
+                flex-direction: column;
+            }
         }
 
     </style>
@@ -248,92 +253,93 @@
     </div>
 
 
-    <div class="container_second contain_two_box" id="second_container" style="display: none;">
+    <div class="container2 container_second contain_two_box" id="second_container" style="display: none;">
+        <div class="inner-container2">
+            <div id="download_content_01" class="card _mainBox">
 
-
-        <div id="download_content_01" class="card _mainBox">
-
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <p id="userNameset01" style="margin-top: 20px; margin-left: 15px;">Hello Amit Maity </p>
-                <img  id="download_button_01" style="margin-right: 5%; width: 30px;" src="images/download icon.png"/>
-            </div>
-        
-            <p style="margin-left: 15px;">It's wrapped time.....</p>
-            <br>
-            <div class="box">
-                <div>
-                <h2 id="q1total_solved" style="color: #2BB15B;">0</h2>
-                <p>Total Solved</p>
-            </div>
-            <div>
-                <h2 id="q1active_days" style="color: #FFC01E;">0</h2>
-                <p>Active Days</p>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <p id="userNameset01" style="margin-top: 20px; margin-left: 15px;">Hello Amit Maity </p>
+                    <img  id="download_button_01" style="margin-right: 5%; width: 30px;" src="images/download icon.png"/>
                 </div>
-            <div>
-                <h2 id="q1max_streak" style="color: #1776EF;">00</h2>
-                <p>Maximum Streak</p>
-            </div>
-            </div>
-            <div class="box1">
-                <div>
-                <h2 id="q1active_month" style="color: white;">0</h2>
-                <p>Most Active Month</p>
+            
+                <p style="margin-left: 15px;">It's wrapped time.....</p>
+                <br>
+                <div class="box">
+                    <div>
+                    <h2 id="q1total_solved" style="color: #2BB15B;">0</h2>
+                    <p>Total Solved</p>
                 </div>
                 <div>
-                    <h2 id="q1active_day" style="color: #DE6510;">0</h2>
-                    <p>Most Active Day</p>
+                    <h2 id="q1active_days" style="color: #FFC01E;">0</h2>
+                    <p>Active Days</p>
                     </div>
-                
-            </div>
-    
-            <p style="text-align: right; margin-top: 30px; margin-bottom: 20px; margin-right: 10px;"><u>leetcodewrapped.info</u></p>
-           
-    
-    
-         </div>
-    
-        <div id="download_content_02" class="card _mainBox">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <p id="userNameset02" style="margin-top: 20px; margin-left: 15px;">Hello Amit Maity </p>
-                <img id="download_button_02" style="margin-right: 5%; width: 30px;" src="images/download icon.png"/>
-            </div>
-            <p style="margin-left: 15px;">It's wrapped time.....</p>
-            <br>
-            <div class="box">
                 <div>
-                <h2 id="q2live_contest" style="color: #2BB15B;">0</h2>
-                <p>Live Contest</p>
-            </div>
-            <div>
-                <h2 id="q2average_solved" style="color: #FFC01E;">0</h2>
-                <p>Average Solved</p>
+                    <h2 id="q1max_streak" style="color: #1776EF;">00</h2>
+                    <p>Maximum Streak</p>
                 </div>
-            <div>
-                <h2 id="q2maximum_rating" style="color: #1776EF;">0</h2>
-                <p>Maximum Rating</p>
-            </div>
-            </div>
-            <div class="box1">
-                <div>
-                    <h2 id="q2highest_rank" style="color: #6A7BE8;">0</h2>
-                    <p>Highest Rank</p>
                 </div>
-                <div>
-                <h2 id="q2lowest_rank" style="color: #DE6510;">0</h2>
-                <p>Lowest Rank</p>
-                </div>
-                <div>
-                    <h2 id="q2active_month" style="color: #ffffff;">Mar</h2>
+                <div class="box1">
+                    <div>
+                    <h2 id="q1active_month" style="color: white;">0</h2>
                     <p>Most Active Month</p>
                     </div>
-                
+                    <div>
+                        <h2 id="q1active_day" style="color: #DE6510;">0</h2>
+                        <p>Most Active Day</p>
+                        </div>
+                    
+                </div>
+        
+                <p style="text-align: right; margin-top: 30px; margin-bottom: 20px; margin-right: 10px;"><u>leetcodewrapped.info</u></p>
+               
+        
+        
+             </div>
+        
+            <div id="download_content_02" class="card _mainBox">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <p id="userNameset02" style="margin-top: 20px; margin-left: 15px;">Hello Amit Maity </p>
+                    <img id="download_button_02" style="margin-right: 5%; width: 30px;" src="images/download icon.png"/>
+                </div>
+                <p style="margin-left: 15px;">It's wrapped time.....</p>
+                <br>
+                <div class="box">
+                    <div>
+                    <h2 id="q2live_contest" style="color: #2BB15B;">0</h2>
+                    <p>Live Contest</p>
+                </div>
+                <div>
+                    <h2 id="q2average_solved" style="color: #FFC01E;">0</h2>
+                    <p>Average Solved</p>
+                    </div>
+                <div>
+                    <h2 id="q2maximum_rating" style="color: #1776EF;">0</h2>
+                    <p>Maximum Rating</p>
+                </div>
+                </div>
+                <div class="box1">
+                    <div>
+                        <h2 id="q2highest_rank" style="color: #6A7BE8;">0</h2>
+                        <p>Highest Rank</p>
+                    </div>
+                    <div>
+                    <h2 id="q2lowest_rank" style="color: #DE6510;">0</h2>
+                    <p>Lowest Rank</p>
+                    </div>
+                    <div>
+                        <h2 id="q2active_month" style="color: #ffffff;">Mar</h2>
+                        <p>Most Active Month</p>
+                        </div>
+                    
+                </div>
+        
+                <p style="text-align: right; margin-top: 30px; margin-bottom: 20px; margin-right: 10px;"><u>leetcodewrapped.info</u></p>
+               
             </div>
-    
-            <p style="text-align: right; margin-top: 30px; margin-bottom: 20px; margin-right: 10px;"><u>leetcodewrapped.info</u></p>
-           
         </div>
-
     </div>
+
+
 
     <script>
 
@@ -410,7 +416,7 @@ async function getData(userName) {
               const data = await getData(value);
               visibleDiv.style.display = 'none';
               invisibleDiv.style.display = 'block';
-            //   console.log(result);
+              console.log(data);
 
 const averageProblemsSolvedContest = data.average_problems_solved_contest;
 const contestAttended = data.contest_attended;
