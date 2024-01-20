@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta property="og:title" content="LeetCode Wrapped">
-    <meta property="og:description" content="Get your 2023 LeetCode Stats... LeetCodeWrapped is your go-to platform for a quick and comprehensive overview of your LeetCode journey in 2023. Simply enter your username, and get instant access to all your profile stats presented on a single screen. Our user-friendly interface makes it easy to visualize your performance.
+    <meta property="og:description"
+        content="Get your 2023 LeetCode Stats... LeetCodeWrapped is your go-to platform for a quick and comprehensive overview of your LeetCode journey in 2023. Simply enter your username, and get instant access to all your profile stats presented on a single screen. Our user-friendly interface makes it easy to visualize your performance.
     What's more, you can download your stats for offline use and share your achievements on social media directly from the platform. Experience the convenience of tracking and showcasing your coding accomplishments with LeetCodeWrapped – simplifying your coding journey in 2023.">
 
 
@@ -16,36 +18,33 @@
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-JYY0XLMCD1"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JYY0XLMCD1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
 
-      gtag("config", "G-JYY0XLMCD1");
+        gtag("config", "G-JYY0XLMCD1");
     </script>
 
-    
+
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
-        
+
         body {
             font-family: Arial, sans-serif;
             background-color: #1D1D1D;
         }
-        
+
         img {
             width: 4%;
             height: 4%;
         }
 
-        
+
         .container {
             width: 100%;
             height: 500px;
@@ -55,7 +54,67 @@
             flex-direction: column;
             font-family: 'Irish Grover', sans-serif;
         }
-        
+
+        .radioButtons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .radioButtons input {
+            display: none;
+        }
+
+        .radioButtons label {
+            display: inline-block;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+
+        .radioButtons label span {
+            position: relative;
+            line-height: 22px;
+        }
+
+
+        .radioButtons label span:before,
+        .radioButtons label span:after {
+            content: '';
+        }
+
+
+
+        .radioButtons label span:before {
+            border: 1px solid #1776EF;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .radioButtons label span:after {
+            background: #1776EF;
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            top: 2px;
+            left: 4px;
+            transition: 300ms;
+            opacity: 0;
+        }
+
+        .radioButtons label input:checked+span:after {
+            opacity: 1;
+        }
+
+        .radioButtons input {
+            color: black;
+        }
+
+
         h1 {
             font-size: 48px;
             color: #1776EF;
@@ -64,8 +123,8 @@
             white-space: nowrap;
             overflow: hidden;
         }
-        
-        
+
+
         .button {
             font-size: 20px;
             padding: 10px 15px;
@@ -93,16 +152,16 @@
             transition: background-color 0.3s;
         }
 
-        
+
         .button1:hover {
             background-color: #5d5d5d;
         }
-        
+
         input[type=text] {
-                width: auto;
-                padding: 10px 20px;
-                margin: 2px 0;
-                border-radius: 10px;
+            width: auto;
+            padding: 10px 20px;
+            margin: 2px 0;
+            border-radius: 10px;
         }
 
         h6 {
@@ -158,29 +217,36 @@
             box-shadow: 0 4px 8px rgba(68, 67, 67, 0.656);
             padding: 10px;
             border-radius: 0px;
-            max-width: 520px; /* Set maximum width for the card */
-            width: 100%; /* Adjust the width to leave space for both cards */
-            display: inline-block; /* Make the cards appear inline */
-            box-sizing: border-box; /* Include padding and border in the width */
+            max-width: 520px;
+            /* Set maximum width for the card */
+            width: 100%;
+            /* Adjust the width to leave space for both cards */
+            display: inline-block;
+            /* Make the cards appear inline */
+            box-sizing: border-box;
+            /* Include padding and border in the width */
         }
 
-        ._mainBox{
+        ._mainBox {
             flex: 1;
         }
 
 
-        .box, .box1, .box2 {
-                margin-bottom: 15px;
-                display: flex;
+        .box,
+        .box1,
+        .box2 {
+            margin-bottom: 15px;
+            display: flex;
         }
 
-        .box{
+        .box {
             margin-top: 5%;
             display: flex;
             justify-content: center;
             gap: 10%;
         }
-        .box1{
+
+        .box1 {
             margin-top: 8%;
             display: flex;
             justify-content: center;
@@ -188,18 +254,18 @@
         }
 
         .container_second h2 {
-         margin: 0;
+            margin: 0;
         }
 
         .container_second p {
-         margin-top: 5px;
-         margin-bottom: 0;
-         color: #a19e9e;
+            margin-top: 5px;
+            margin-bottom: 0;
+            color: #a19e9e;
         }
 
 
-        .container_second span{
-            color: yellow;
+        .container_second span {
+            color: #2BB15B;
             font-weight: bold;
         }
 
@@ -230,21 +296,22 @@
                 flex-direction: column;
             }
         }
-
     </style>
 </head>
+
 <body>
 
     <div style="display: flex; justify-content: space-between; align-items: center;">
-    <img src="images/image 1.png">
-    <a href="https://www.buymeacoffee.com/maityamitca" target="_blank" style="margin-right: 5%; text-decoration: none; color: #B1BAB8;">Buy me Coffee</a>
+        <img src="images/image 1.png">
+        <a href="https://www.buymeacoffee.com/maityamitca" target="_blank"
+            style="margin-right: 5%; text-decoration: none; color: #B1BAB8;">Buy me Coffee</a>
 
     </div>
 
     <div id="first_container" class="container">
         <h1><span style="color: #1776EF;">LeetCode</span> <span style="color: #2BB15B;">Wrapped</span></h1>
-        <p style="font-size: 24px; color: white; margin-bottom: 20px;">Get your 2023 LeetCode Stats</p>
-        <button id="wrapButton" class="button" onclick="showInput()"><b>Let's wrap 2023</b></button>
+        <p style="font-size: 24px; color: white; margin-bottom: 20px;">Get your LeetCode Stats</p>
+        <button id="wrapButton" class="button" onclick="showInput()"><b>Let's Start</b></button>
         <div id="inputSection" style="display: none;">
             <input type="text" id="username" placeholder="Enter your username">
             <button class="button1" id="wrap_up_button"><b>Wrapped</b></button>
@@ -259,69 +326,78 @@
 
 
     <div class="container2 container_second contain_two_box" id="second_container" style="display: none;">
+
+        <div id="radioContainer" class="radioButtons"></div>
+
+        <br> <br>
+
         <div class="inner-container2">
-            
+
             <div id="download_content_01" class="card _mainBox">
 
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <p id="userNameset01" style="margin-top: 20px; margin-left: 15px;">Hello Amit Maity </p>
-                    <img  id="download_button_01" style="margin-right: 5%; width: 25px;" src="images/download icon.png"/>
+                    <img id="download_button_01" style="margin-right: 5%; width: 25px;"
+                        src="images/download icon.png" />
                 </div>
-            
+
                 <p style="margin-left: 15px;">It's wrapped time for questions.....</p>
                 <br>
                 <div class="box">
                     <div>
-                    <h2 id="q1total_solved" style="color: #2BB15B;">0</h2>
-                    <p>Total Submissions</p>
-                </div>
-                <div>
-                    <h2 id="q1active_days" style="color: #FFC01E;">0</h2>
-                    <p>Active Days</p>
+                        <h2 id="q1total_solved" style="color: #2BB15B;">0</h2>
+                        <p>Total Submissions</p>
                     </div>
-                <div>
-                    <h2 id="q1max_streak" style="color: #1776EF;">00</h2>
-                    <p>Maximum Streak</p>
-                </div>
+                    <div>
+                        <h2 id="q1active_days" style="color: #FFC01E;">0</h2>
+                        <p>Active Days</p>
+                    </div>
+                    <div>
+                        <h2 id="q1max_streak" style="color: #1776EF;">00</h2>
+                        <p>Maximum Streak</p>
+                    </div>
                 </div>
                 <div class="box1">
                     <div>
-                    <h2 id="q1active_month" style="color: white;">0</h2>
-                    <p>Most Active Month</p>
+                        <h2 id="q1active_month" style="color: white;">0</h2>
+                        <p>Most Active Month</p>
                     </div>
                     <div>
                         <h2 id="q1active_day" style="color: #DE6510;">0</h2>
                         <p>Most Active Day</p>
-                        </div>
-                    
+                    </div>
+
                 </div>
-        
-                <p style="text-align: right; margin-top: 30px; margin-bottom: 20px; margin-right: 10px;"><u>leetcodewrapped.info</u></p>
-               
-        
-        
-             </div>
-        
+
+                <p style="text-align: right; margin-top: 30px; margin-bottom: 20px; margin-right: 10px;">
+                    <u>leetcodewrapped.info</u>
+                </p>
+
+
+
+            </div>
+
             <div id="download_content_02" class="card _mainBox">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <p id="userNameset02" style="margin-top: 20px; margin-left: 15px;">Hello Amit Maity </p>
-                    <img id="download_button_02" style="margin-right: 5%; width: 25px;" src="images/download icon.png"/>
+                    <img id="download_button_02" style="margin-right: 5%; width: 25px;"
+                        src="images/download icon.png" />
                 </div>
                 <p style="margin-left: 15px;">It's wrapped time for contests.....</p>
                 <br>
                 <div class="box">
                     <div>
-                    <h2 id="q2live_contest" style="color: #2BB15B;">0</h2>
-                    <p>Live Contest</p>
-                </div>
-                <div>
-                    <h2 id="q2average_solved" style="color: #FFC01E;">0</h2>
-                    <p>Average Solved</p>
+                        <h2 id="q2live_contest" style="color: #2BB15B;">0</h2>
+                        <p>Live Contest</p>
                     </div>
-                <div>
-                    <h2 id="q2maximum_rating" style="color: #1776EF;">0</h2>
-                    <p>Maximum Rating</p>
-                </div>
+                    <div>
+                        <h2 id="q2average_solved" style="color: #FFC01E;">0</h2>
+                        <p>Average Solved</p>
+                    </div>
+                    <div>
+                        <h2 id="q2maximum_rating" style="color: #1776EF;">0</h2>
+                        <p>Maximum Rating</p>
+                    </div>
                 </div>
                 <div class="box1">
                     <div>
@@ -329,19 +405,22 @@
                         <p>Highest Rank</p>
                     </div>
                     <div>
-                    <h2 id="q2lowest_rank" style="color: #DE6510;">0</h2>
-                    <p>Lowest Rank</p>
+                        <h2 id="q2lowest_rank" style="color: #DE6510;">0</h2>
+                        <p>Lowest Rank</p>
                     </div>
                     <div>
                         <h2 id="q2active_month" style="color: #ffffff;">Mar</h2>
                         <p>Most Active Month</p>
-                        </div>
-                    
+                    </div>
+
                 </div>
-        
-                <p style="text-align: right; margin-top: 30px; margin-bottom: 20px; margin-right: 10px;"><u>leetcodewrapped.info</u></p>
-               
+
+                <p style="text-align: right; margin-top: 30px; margin-bottom: 20px; margin-right: 10px;">
+                    <u>leetcodewrapped.info</u>
+                </p>
+
             </div>
+
         </div>
     </div>
 
@@ -387,50 +466,50 @@
         });
 
 
-function updateProgressBar(loaded, total) {
-    const percent = (loaded / total) * 100;
-    progressBar.style.width = percent + '%';
-}
-
-async function getData(userName) {
-    const xhr = new XMLHttpRequest();
-    const apiUrl = `https://vivacious-tweed-jacket-slug.cyclic.app/app?userName=${userName}`;
-  //  const apiUrl = `https://scary-turtleneck-shirt-foal.cyclic.app/app?userName=${userName}`;
-
-    xhr.open('GET', apiUrl);
-
-    xhr.onprogress = (event) => {
-        if (event.lengthComputable) {
-            updateProgressBar(event.loaded, event.total);
+        function updateProgressBar(loaded, total) {
+            const percent = (loaded / total) * 100;
+            progressBar.style.width = percent + '%';
         }
-    };
 
-    xhr.onloadstart = () => {
-        loadingIndicator.style.display = 'block';
-        progressBarContainer.style.display = 'block';
-    };
+        async function getData(userName) {
+            const xhr = new XMLHttpRequest();
+            const apiUrl = `https://vivacious-tweed-jacket-slug.cyclic.app/app?userName=${userName}`;
+            //  const apiUrl = `https://scary-turtleneck-shirt-foal.cyclic.app/app?userName=${userName}`;
 
-    xhr.onloadend = () => {
-        loadingIndicator.style.display = 'none';
-        progressBarContainer.style.display = 'none';
-        progressBar.style.width = '0%';
-    };
+            xhr.open('GET', apiUrl);
 
-    xhr.send();
+            xhr.onprogress = (event) => {
+                if (event.lengthComputable) {
+                    updateProgressBar(event.loaded, event.total);
+                }
+            };
 
-    return new Promise((resolve, reject) => {
-        xhr.onload = () => {
-            if (xhr.status === 200) {
-                resolve(JSON.parse(xhr.responseText));
-            } else {
-                reject(new Error(`Error: ${xhr.status} - ${xhr.statusText}`));
-            }
-        };
-        xhr.onerror = () => {
-            reject(new Error('Network error'));
-        };
-    });
-}
+            xhr.onloadstart = () => {
+                loadingIndicator.style.display = 'block';
+                progressBarContainer.style.display = 'block';
+            };
+
+            xhr.onloadend = () => {
+                loadingIndicator.style.display = 'none';
+                progressBarContainer.style.display = 'none';
+                progressBar.style.width = '0%';
+            };
+
+            xhr.send();
+
+            return new Promise((resolve, reject) => {
+                xhr.onload = () => {
+                    if (xhr.status === 200) {
+                        resolve(JSON.parse(xhr.responseText));
+                    } else {
+                        reject(new Error(`Error: ${xhr.status} - ${xhr.statusText}`));
+                    }
+                };
+                xhr.onerror = () => {
+                    reject(new Error('Network error'));
+                };
+            });
+        }
 
 
         function showInput() {
@@ -446,69 +525,221 @@ async function getData(userName) {
         }
 
         wrap_up_button.addEventListener('click', async () => {
-          const value = userName.value;
+            const value = userName.value;
             try {
-              const data = await getData(value);
-              visibleDiv.style.display = 'none';
-              invisibleDiv.style.display = 'block';
-              console.log(data);
+                const data = await getData(value);
+                if (((data.years).length) == 0) {
+                    alert("UserName Doesn't exist!" + len(data.years))
+                    console.error("Error:", error.message);
+                } else {
 
-const averageProblemsSolvedContest = data.average_problems_solved_contest;
-const contestAttended = data.contest_attended;
-const highestRank = data.highest_rank;
-const lowestRank = data.lowest_rank;
-const maxRating = data.max_rating;
-const maxStreak = data.max_streak;
-const mostActiveDay = data.most_active_day;
-const mostActiveMonth = data.most_active_month;
-const mostActiveMonthContest = data.most_active_month_contest;
-const totalActiveDays = data.total_active_days;
-const totalQuestionsSolved = data.total_questions_solved;
-
-// Now, you can use these variables as needed
-console.log(averageProblemsSolvedContest, contestAttended, highestRank, lowestRank, maxRating, maxStreak, mostActiveDay, mostActiveMonth, mostActiveMonthContest, totalActiveDays, totalQuestionsSolved);
-       
-document.getElementById('q2live_contest').textContent = contestAttended;
-document.getElementById('q2average_solved').textContent = averageProblemsSolvedContest;
-document.getElementById('q2maximum_rating').textContent = maxRating;
-document.getElementById('q2highest_rank').textContent = highestRank;
-document.getElementById('q2lowest_rank').textContent = lowestRank;
-document.getElementById('q2active_month').textContent = mostActiveMonthContest
-document.getElementById('userNameset01').textContent = "Hello "+value
-document.getElementById('userNameset02').textContent = "Hello "+value
+                    for (var key in (data.years)) {
+                        createRadioButton(key, (data.years)[key]);
+                    }
+                    createRadioButton('all', "Overall");
+                    document.getElementById('all').checked = true;
+                    visibleDiv.style.display = 'none';
+                    invisibleDiv.style.display = 'block';
+                    console.log(data);
 
 
-document.getElementById('q1total_solved').textContent = totalQuestionsSolved
-document.getElementById('q1active_days').textContent = totalActiveDays
-document.getElementById('q1max_streak').textContent = maxStreak
-document.getElementById('q1active_month').textContent = mostActiveMonth
-document.getElementById('q1active_day').textContent = mostActiveDay
+                    // for all Years Overall Peroform Data
+                    var contest_attended = 0;
+                    var highest_rank = 100000;
+                    var lowest_rank = 0;
+                    var max_rating = 0;
+                    var max_streak = 0;
+                    var most_active_day = "";
+                    var most_active_day_qns = 0;
+                    var most_active_month = "";
+                    var most_active_month_contest = "";
+                    var most_active_month_contest_number = 0;
+                    var most_active_month_qns = 0;
+                    var problems_solved_contest = 0;
+                    var total_active_days = 0;
+                    var total_questions_solved = 0;
+                    var average_questions_contest = 0;
+
+                    console.log(data[2023]);
+
+                    for (var key in (data.years)) {
+                        contest_attended += data[(data.years)[key]].contest_attended;
+                        if (data[(data.years)[key]].highest_rank != 0) highest_rank = Math.min(highest_rank, data[(data.years)[key]].highest_rank);
+                        lowest_rank = Math.max(lowest_rank, data[(data.years)[key]].lowest_rank);
+                        max_rating = Math.max(max_rating, data[(data.years)[key]].max_rating);
+                        max_streak = Math.max(max_streak, data[(data.years)[key]].max_streak);
+                        if (most_active_day_qns < data[(data.years)[key]].most_active_day_qns) {
+                            most_active_day_qns = data[(data.years)[key]].most_active_day_qns;
+                            most_active_day = data[(data.years)[key]].most_active_day + "," + (data.years)[key];
+                        }
+                        if (most_active_month_qns < data[(data.years)[key]].most_active_month_qns) {
+                            most_active_month_qns = data[(data.years)[key]].most_active_month_qns;
+                            most_active_month = data[(data.years)[key]].most_active_month + "," + (data.years)[key];
+                        }
+                        if (most_active_month_contest_number < data[(data.years)[key]].most_active_month_contest_number) {
+                            most_active_month_contest_number = data[(data.years)[key]].most_active_month_contest_number;
+                            most_active_month_contest = data[(data.years)[key]].most_active_month_contest + "," + (data.years)[key];
+                        }
+                        problems_solved_contest += data[(data.years)[key]].problems_solved_contest;
+                        total_active_days += data[(data.years)[key]].total_active_days;
+                        total_questions_solved += data[(data.years)[key]].total_questions_solved;
+                        average_questions_contest = (problems_solved_contest / contest_attended).toFixed(2);
+                    }
+
+                    var averageProblemsSolvedContest = average_questions_contest;
+                    var contestAttended = contest_attended;
+                    var highestRank = highest_rank;
+                    var lowestRank = lowest_rank;
+                    var maxRating = max_rating;
+                    var maxStreak = max_streak;
+                    var mostActiveDay = most_active_day;
+                    var mostActiveMonth = most_active_month;
+                    var mostActiveMonthContest = most_active_month_contest;
+                    var totalActiveDays = total_active_days;
+                    var totalQuestionsSolved = total_questions_solved;
+
+                    var radioButtons = document.querySelectorAll('.radioButtons input[type="radio"]');
+
+                    radioButtons.forEach(function (radioButton) {
+                        radioButton.addEventListener('click', function () {
+                            var buttonId = radioButton.id;
+                            if (buttonId == "all") {
+                                averageProblemsSolvedContest = average_questions_contest;
+                                contestAttended = contest_attended;
+                                highestRank = highest_rank;
+                                lowestRank = lowest_rank;
+                                maxRating = max_rating;
+                                maxStreak = max_streak;
+                                mostActiveDay = most_active_day;
+                                mostActiveMonth = most_active_month;
+                                mostActiveMonthContest = most_active_month_contest;
+                                totalActiveDays = total_active_days;
+                                totalQuestionsSolved = total_questions_solved;
+
+
+
+                                console.log(averageProblemsSolvedContest, contestAttended, highestRank, lowestRank, maxRating, maxStreak, mostActiveDay, mostActiveMonth, mostActiveMonthContest, totalActiveDays, totalQuestionsSolved);
+
+                                document.getElementById('q2live_contest').textContent = contestAttended;
+                                document.getElementById('q2average_solved').textContent = averageProblemsSolvedContest;
+                                document.getElementById('q2maximum_rating').textContent = maxRating;
+                                document.getElementById('q2highest_rank').textContent = highestRank;
+                                document.getElementById('q2lowest_rank').textContent = lowestRank;
+                                document.getElementById('q2active_month').textContent = mostActiveMonthContest
+                                document.getElementById('userNameset01').textContent = "Hello " + value
+                                document.getElementById('userNameset02').textContent = "Hello " + value
+
+
+                                document.getElementById('q1total_solved').textContent = totalQuestionsSolved
+                                document.getElementById('q1active_days').textContent = totalActiveDays
+                                document.getElementById('q1max_streak').textContent = maxStreak
+                                document.getElementById('q1active_month').textContent = mostActiveMonth
+                                document.getElementById('q1active_day').textContent = mostActiveDay
+
+
+
+                            } else {
+                                averageProblemsSolvedContest = (((data[(data.years)[buttonId]].problems_solved_contest)) / (data[(data.years)[buttonId]].contest_attended)).toFixed(2);
+                                contestAttended = data[(data.years)[buttonId]].contest_attended
+                                highestRank = data[(data.years)[buttonId]].highest_rank
+                                lowestRank = data[(data.years)[buttonId]].lowest_rank
+                                maxRating = data[(data.years)[buttonId]].max_rating
+                                maxStreak = data[(data.years)[buttonId]].max_streak
+                                mostActiveDay = data[(data.years)[buttonId]].most_active_day
+                                mostActiveMonth = data[(data.years)[buttonId]].most_active_month
+                                mostActiveMonthContest = data[(data.years)[buttonId]].most_active_month_contest
+                                totalActiveDays = data[(data.years)[buttonId]].total_active_days
+                                totalQuestionsSolved = data[(data.years)[buttonId]].total_questions_solved
 
 
 
 
+                                console.log(averageProblemsSolvedContest, contestAttended, highestRank, lowestRank, maxRating, maxStreak, mostActiveDay, mostActiveMonth, mostActiveMonthContest, totalActiveDays, totalQuestionsSolved);
+
+                                document.getElementById('q2live_contest').textContent = contestAttended;
+                                document.getElementById('q2average_solved').textContent = averageProblemsSolvedContest;
+                                document.getElementById('q2maximum_rating').textContent = maxRating;
+                                document.getElementById('q2highest_rank').textContent = highestRank;
+                                document.getElementById('q2lowest_rank').textContent = lowestRank;
+                                document.getElementById('q2active_month').textContent = mostActiveMonthContest
+                                document.getElementById('userNameset01').textContent = "Hello " + value
+                                document.getElementById('userNameset02').textContent = "Hello " + value
+
+
+                                document.getElementById('q1total_solved').textContent = totalQuestionsSolved
+                                document.getElementById('q1active_days').textContent = totalActiveDays
+                                document.getElementById('q1max_streak').textContent = maxStreak
+                                document.getElementById('q1active_month').textContent = mostActiveMonth
+                                document.getElementById('q1active_day').textContent = mostActiveDay
+
+
+                            }
+                        });
+                    });
+
+                    // Now, you can use these variables as needed
+                    console.log(averageProblemsSolvedContest, contestAttended, highestRank, lowestRank, maxRating, maxStreak, mostActiveDay, mostActiveMonth, mostActiveMonthContest, totalActiveDays, totalQuestionsSolved);
+
+                    document.getElementById('q2live_contest').textContent = contestAttended;
+                    document.getElementById('q2average_solved').textContent = averageProblemsSolvedContest;
+                    document.getElementById('q2maximum_rating').textContent = maxRating;
+                    document.getElementById('q2highest_rank').textContent = highestRank;
+                    document.getElementById('q2lowest_rank').textContent = lowestRank;
+                    document.getElementById('q2active_month').textContent = mostActiveMonthContest
+                    document.getElementById('userNameset01').textContent = "Hello " + value
+                    document.getElementById('userNameset02').textContent = "Hello " + value
+
+
+                    document.getElementById('q1total_solved').textContent = totalQuestionsSolved
+                    document.getElementById('q1active_days').textContent = totalActiveDays
+                    document.getElementById('q1max_streak').textContent = maxStreak
+                    document.getElementById('q1active_month').textContent = mostActiveMonth
+                    document.getElementById('q1active_day').textContent = mostActiveDay
+                }
 
             } catch (error) {
-               alert("UserName Doesn't exist!")
-               console.error("Error:", error.message);
-             }
+                alert("UserName Doesn't exist!!")
+                console.error("Error:", error.message);
+            }
         });
 
+        function createRadioButton(id, label) {
+            var div = document.createElement('label');
 
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
-       
+            var radioInput = document.createElement('input');
+            radioInput.type = 'radio';
+            radioInput.name = 'radio';
+            radioInput.id = id;
+
+            var spanLabel = document.createElement('span');
+            spanLabel.textContent = label;
+
+            // Append the radio input and span label to the div
+            div.appendChild(radioInput);
+            div.appendChild(spanLabel);
+
+            // Append the div to the container
+            document.getElementById('radioContainer').appendChild(div);
+        }
+
+
+        // document.addEventListener('contextmenu', function (e) {
+        //     e.preventDefault();
+        // });
+
     </script>
 
-  <footer>
-    <p style="text-align: center; font-size: 16px;"><span style="color: #B1BAB8;">Made by -&nbsp; </span>
-      <a href="https://github.com/maityamit" target="_blank" style="text-decoration: none; color: #1776EF;">maityamit</a>
-      <span style="color: #B1BAB8;">&nbsp;&amp;&nbsp;</span>
-      <a href="https://github.com/Shubhisingh921" target="_blank" style="text-decoration: none; color: #1776EF;">Shubhisingh921</a>
-    </p>
+    <footer>
+        <p style="text-align: center; font-size: 16px;"><span style="color: #B1BAB8;">Made by -&nbsp; </span>
+            <a href="https://github.com/maityamit" target="_blank"
+                style="text-decoration: none; color: #1776EF;">maityamit</a>
+            <span style="color: #B1BAB8;">&nbsp;&amp;&nbsp;</span>
+            <a href="https://github.com/Shubhisingh921" target="_blank"
+                style="text-decoration: none; color: #1776EF;">Shubhisingh921</a>
+        </p>
 
-   
-  </footer>
+
+    </footer>
 </body>
+
 </html>
