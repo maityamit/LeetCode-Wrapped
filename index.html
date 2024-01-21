@@ -36,7 +36,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #1D1D1D;
+            background-color: #f5f5f5;
         }
 
         img {
@@ -115,7 +115,7 @@
         }
 
 
-        h1 {
+        .container h1 {
             font-size: 48px;
             color: #1776EF;
             margin-bottom: 10px;
@@ -130,7 +130,7 @@
             padding: 10px 15px;
             border: none;
             border-radius: 25px;
-            background-color: #ffffff;
+            background-color: #5d5d5d;
             color: #FFC01E;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -138,7 +138,7 @@
         }
 
         .button:hover {
-            background-color: #5d5d5d;
+            background-color: #535353;
         }
 
         .button1 {
@@ -146,7 +146,7 @@
             padding: 10px 15px;
             border: none;
             border-radius: 10px;
-            background-color: beige;
+            background-color: #5d5d5d;
             color: #FFC01E;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -204,19 +204,17 @@
         }
 
         .container_second h1 {
-            font-family: 'Irish Grover', sans-serif;
             text-align: center;
-            font-size: 40px;
-            color: #1776EF;
+            font-size: 35px;
             margin-bottom: 5px;
             margin-top: -20px;
         }
 
         .card {
-            background-color: #212121;
-            box-shadow: 0 4px 8px rgba(68, 67, 67, 0.656);
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(121, 121, 121, 0.656);
             padding: 10px;
-            border-radius: 0px;
+            border-radius: 10px;
             max-width: 520px;
             /* Set maximum width for the card */
             width: 100%;
@@ -240,14 +238,14 @@
         }
 
         .box {
-            margin-top: 5%;
+            margin-top: 8%;
             display: flex;
             justify-content: center;
             gap: 10%;
         }
 
         .box1 {
-            margin-top: 8%;
+            margin-top: 13%;
             display: flex;
             justify-content: center;
             gap: 10%;
@@ -256,6 +254,7 @@
         .container_second h2 {
             margin: 0;
         }
+
 
         .container_second p {
             margin-top: 5px;
@@ -310,7 +309,7 @@
 
     <div id="first_container" class="container">
         <h1><span style="color: #1776EF;">LeetCode</span> <span style="color: #2BB15B;">Wrapped</span></h1>
-        <p style="font-size: 24px; color: white; margin-bottom: 20px;">Get your LeetCode Stats</p>
+        <p style="font-size: 24px; color: rgb(0, 0, 0); margin-bottom: 20px;">Get your LeetCode Stats</p>
         <button id="wrapButton" class="button" onclick="showInput()"><b>Let's Start</b></button>
         <div id="inputSection" style="display: none;">
             <input type="text" id="username" placeholder="Enter your username">
@@ -337,33 +336,32 @@
 
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <p id="userNameset01" style="margin-top: 20px; margin-left: 15px;">Hello Amit Maity </p>
-                    <img id="download_button_01" style="margin-right: 5%; width: 25px;"
-                        src="images/download icon.png" />
+                    
                 </div>
 
-                <p style="margin-left: 15px;">It's wrapped time for questions.....</p>
+                <!-- <p style="margin-left: 17px;">Questions Wrapped</p> -->
                 <br>
                 <div class="box">
                     <div>
-                        <h2 id="q1total_solved" style="color: #2BB15B;">0</h2>
+                        <h1 id="q1total_solved" style="color: #2BB15B;">0</h1>
                         <p>Total Submissions</p>
                     </div>
                     <div>
-                        <h2 id="q1active_days" style="color: #FFC01E;">0</h2>
+                        <h1 id="q1active_days" style="color: #FFC01E;">0</h1>
                         <p>Active Days</p>
                     </div>
                     <div>
-                        <h2 id="q1max_streak" style="color: #1776EF;">00</h2>
+                        <h1 id="q1max_streak" style="color: #1776EF;">00</h1>
                         <p>Maximum Streak</p>
                     </div>
                 </div>
                 <div class="box1">
                     <div>
-                        <h2 id="q1active_month" style="color: white;">0</h2>
+                        <h1 id="q1active_month" style="color: #6A7BE8">0</h1>
                         <p>Most Active Month</p>
                     </div>
                     <div>
-                        <h2 id="q1active_day" style="color: #DE6510;">0</h2>
+                        <h1 id="q1active_day" style="color: #DE6510;">0</h1>
                         <p>Most Active Day</p>
                     </div>
 
@@ -380,36 +378,35 @@
             <div id="download_content_02" class="card _mainBox">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <p id="userNameset02" style="margin-top: 20px; margin-left: 15px;">Hello Amit Maity </p>
-                    <img id="download_button_02" style="margin-right: 5%; width: 25px;"
-                        src="images/download icon.png" />
+                    
                 </div>
-                <p style="margin-left: 15px;">It's wrapped time for contests.....</p>
+                <!-- <p style="margin-left: 17px;">Contest Wrapped</p> -->
                 <br>
                 <div class="box">
                     <div>
-                        <h2 id="q2live_contest" style="color: #2BB15B;">0</h2>
+                        <h1 id="q2live_contest" style="color: #2BB15B;">0</h1>
                         <p>Live Contest</p>
                     </div>
                     <div>
-                        <h2 id="q2average_solved" style="color: #FFC01E;">0</h2>
+                        <h1 id="q2average_solved" style="color: #FFC01E;">0</h1>
                         <p>Average Solved</p>
                     </div>
                     <div>
-                        <h2 id="q2maximum_rating" style="color: #1776EF;">0</h2>
+                        <h1 id="q2maximum_rating" style="color: #1776EF;">0</h1>
                         <p>Maximum Rating</p>
                     </div>
                 </div>
                 <div class="box1">
                     <div>
-                        <h2 id="q2highest_rank" style="color: #6A7BE8;">0</h2>
+                        <h1 id="q2highest_rank" style="color: #6A7BE8;">0</h1>
                         <p>Highest Rank</p>
                     </div>
                     <div>
-                        <h2 id="q2lowest_rank" style="color: #DE6510;">0</h2>
+                        <h1 id="q2lowest_rank" style="color: #DE6510;">0</h1>
                         <p>Lowest Rank</p>
                     </div>
                     <div>
-                        <h2 id="q2active_month" style="color: #ffffff;">Mar</h2>
+                        <h1 id="q2active_month" style="color: #4d4d4d;">Mar</h1>
                         <p>Most Active Month</p>
                     </div>
 
@@ -435,35 +432,6 @@
         const progressBar = document.getElementById('progress-bar');
         var visibleDiv = document.getElementById('first_container');
         var invisibleDiv = document.getElementById('second_container');
-
-
-        function downloadDivAsImage(divId) {
-            const divToDownload = document.getElementById(divId);
-
-            html2canvas(divToDownload).then(function (canvas) {
-                // Create an "a" element to trigger the download
-                const downloadLink = document.createElement('a');
-                // Convert canvas to image data URL
-                const imageDataUrl = canvas.toDataURL('image/png');
-                // Set the href attribute of the "a" element to the image data URL
-                downloadLink.href = imageDataUrl;
-                // Set the download attribute with the desired file name
-                downloadLink.download = 'downloaded_image.png';
-                // Append the "a" element to the document
-                document.body.appendChild(downloadLink);
-                // Trigger a click on the "a" element to start the download
-                downloadLink.click();
-                // Remove the "a" element from the document
-                document.body.removeChild(downloadLink);
-            });
-        }
-
-        document.getElementById('download_button_01').addEventListener('click', function () {
-            downloadDivAsImage('download_content_01');
-        });
-        document.getElementById('download_button_02').addEventListener('click', function () {
-            downloadDivAsImage('download_content_02');
-        });
 
 
         function updateProgressBar(loaded, total) {
@@ -570,15 +538,15 @@
                         max_streak = Math.max(max_streak, data[(data.years)[key]].max_streak);
                         if (most_active_day_qns < data[(data.years)[key]].most_active_day_qns) {
                             most_active_day_qns = data[(data.years)[key]].most_active_day_qns;
-                            most_active_day = data[(data.years)[key]].most_active_day + "," + (data.years)[key];
+                            most_active_day = data[(data.years)[key]].most_active_day + "," + (data.years)[key]%100;
                         }
                         if (most_active_month_qns < data[(data.years)[key]].most_active_month_qns) {
                             most_active_month_qns = data[(data.years)[key]].most_active_month_qns;
-                            most_active_month = data[(data.years)[key]].most_active_month + "," + (data.years)[key];
+                            most_active_month = data[(data.years)[key]].most_active_month + "," + (data.years)[key]%100;
                         }
                         if (most_active_month_contest_number < data[(data.years)[key]].most_active_month_contest_number) {
                             most_active_month_contest_number = data[(data.years)[key]].most_active_month_contest_number;
-                            most_active_month_contest = data[(data.years)[key]].most_active_month_contest + "," + (data.years)[key];
+                            most_active_month_contest = data[(data.years)[key]].most_active_month_contest + "," + (data.years)[key]%100;
                         }
                         problems_solved_contest += data[(data.years)[key]].problems_solved_contest;
                         total_active_days += data[(data.years)[key]].total_active_days;
@@ -626,8 +594,8 @@
                                 document.getElementById('q2highest_rank').textContent = highestRank;
                                 document.getElementById('q2lowest_rank').textContent = lowestRank;
                                 document.getElementById('q2active_month').textContent = mostActiveMonthContest
-                                document.getElementById('userNameset01').textContent = "Hello " + value
-                                document.getElementById('userNameset02').textContent = "Hello " + value
+                                document.getElementById('userNameset01').textContent = "Questions Wrapped" 
+                                document.getElementById('userNameset02').textContent = "Contests Wrapped"
 
 
                                 document.getElementById('q1total_solved').textContent = totalQuestionsSolved
@@ -662,8 +630,8 @@
                                 document.getElementById('q2highest_rank').textContent = highestRank;
                                 document.getElementById('q2lowest_rank').textContent = lowestRank;
                                 document.getElementById('q2active_month').textContent = mostActiveMonthContest
-                                document.getElementById('userNameset01').textContent = "Hello " + value
-                                document.getElementById('userNameset02').textContent = "Hello " + value
+                                document.getElementById('userNameset01').textContent = "Questions Wrapped" 
+                                document.getElementById('userNameset02').textContent = "Contests Wrapped"
 
 
                                 document.getElementById('q1total_solved').textContent = totalQuestionsSolved
@@ -686,8 +654,8 @@
                     document.getElementById('q2highest_rank').textContent = highestRank;
                     document.getElementById('q2lowest_rank').textContent = lowestRank;
                     document.getElementById('q2active_month').textContent = mostActiveMonthContest
-                    document.getElementById('userNameset01').textContent = "Hello " + value
-                    document.getElementById('userNameset02').textContent = "Hello " + value
+                    document.getElementById('userNameset01').textContent = "Questions Wrapped" 
+                    document.getElementById('userNameset02').textContent = "Contests Wrapped"
 
 
                     document.getElementById('q1total_solved').textContent = totalQuestionsSolved
