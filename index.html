@@ -296,9 +296,26 @@
             }
         }
     </style>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-W6SDWF8J');</script>
+    <!-- End Google Tag Manager -->
+
 </head>
 
 <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6SDWF8J" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <div style="display: flex; justify-content: space-between; align-items: center;">
         <img src="images/image 1.png">
@@ -337,7 +354,7 @@
 
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <p id="userNameset01" style="margin-top: 20px; margin-left: 15px;">Hello Amit Maity </p>
-                    
+
                 </div>
 
                 <!-- <p style="margin-left: 17px;">Questions Wrapped</p> -->
@@ -379,7 +396,7 @@
             <div id="download_content_02" class="card _mainBox">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <p id="userNameset02" style="margin-top: 20px; margin-left: 15px;">Hello Amit Maity </p>
-                    
+
                 </div>
                 <!-- <p style="margin-left: 17px;">Contest Wrapped</p> -->
                 <br>
@@ -539,15 +556,15 @@
                         max_streak = Math.max(max_streak, data[(data.years)[key]].max_streak);
                         if (most_active_day_qns < data[(data.years)[key]].most_active_day_qns) {
                             most_active_day_qns = data[(data.years)[key]].most_active_day_qns;
-                            most_active_day = data[(data.years)[key]].most_active_day + "," + (data.years)[key]%100;
+                            most_active_day = data[(data.years)[key]].most_active_day + "," + (data.years)[key] % 100;
                         }
                         if (most_active_month_qns < data[(data.years)[key]].most_active_month_qns) {
                             most_active_month_qns = data[(data.years)[key]].most_active_month_qns;
-                            most_active_month = data[(data.years)[key]].most_active_month + "," + (data.years)[key]%100;
+                            most_active_month = data[(data.years)[key]].most_active_month + "," + (data.years)[key] % 100;
                         }
                         if (most_active_month_contest_number < data[(data.years)[key]].most_active_month_contest_number) {
                             most_active_month_contest_number = data[(data.years)[key]].most_active_month_contest_number;
-                            most_active_month_contest = data[(data.years)[key]].most_active_month_contest + "," + (data.years)[key]%100;
+                            most_active_month_contest = data[(data.years)[key]].most_active_month_contest + "," + (data.years)[key] % 100;
                         }
                         problems_solved_contest += data[(data.years)[key]].problems_solved_contest;
                         total_active_days += data[(data.years)[key]].total_active_days;
@@ -595,7 +612,7 @@
                                 document.getElementById('q2highest_rank').textContent = highestRank;
                                 document.getElementById('q2lowest_rank').textContent = lowestRank;
                                 document.getElementById('q2active_month').textContent = mostActiveMonthContest
-                                document.getElementById('userNameset01').textContent = "Questions Wrapped" 
+                                document.getElementById('userNameset01').textContent = "Questions Wrapped"
                                 document.getElementById('userNameset02').textContent = "Contests Wrapped"
 
 
@@ -631,7 +648,7 @@
                                 document.getElementById('q2highest_rank').textContent = highestRank;
                                 document.getElementById('q2lowest_rank').textContent = lowestRank;
                                 document.getElementById('q2active_month').textContent = mostActiveMonthContest
-                                document.getElementById('userNameset01').textContent = "Questions Wrapped" 
+                                document.getElementById('userNameset01').textContent = "Questions Wrapped"
                                 document.getElementById('userNameset02').textContent = "Contests Wrapped"
 
 
@@ -655,7 +672,7 @@
                     document.getElementById('q2highest_rank').textContent = highestRank;
                     document.getElementById('q2lowest_rank').textContent = lowestRank;
                     document.getElementById('q2active_month').textContent = mostActiveMonthContest
-                    document.getElementById('userNameset01').textContent = "Questions Wrapped" 
+                    document.getElementById('userNameset01').textContent = "Questions Wrapped"
                     document.getElementById('userNameset02').textContent = "Contests Wrapped"
 
 
