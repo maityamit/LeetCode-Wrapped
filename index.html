@@ -516,6 +516,7 @@
 
         wrap_up_button.addEventListener('click', async () => {
             const value = userName.value;
+            console.log(value);
             try {
                 const data = await getData(value);
                 if (((data.years).length) == 0) {
@@ -560,7 +561,7 @@
                         max_streak = Math.max(max_streak, data[(data.years)[key]].max_streak);
                         if (most_active_day_qns < data[(data.years)[key]].most_active_day_qns) {
                             most_active_day_qns = data[(data.years)[key]].most_active_day_qns;
-                            most_active_day = data[(data.years)[key]].most_active_day + "," + (data.years)[key] % 100;
+                            most_active_day = data[(data.years)[key]].most_active_day;
                         }
                         if (most_active_month_qns < data[(data.years)[key]].most_active_month_qns) {
                             most_active_month_qns = data[(data.years)[key]].most_active_month_qns;
@@ -605,6 +606,8 @@
                                 mostActiveMonthContest = most_active_month_contest;
                                 totalActiveDays = total_active_days;
                                 totalQuestionsSolved = total_questions_solved;
+
+                                console.log("AMT: " + mostActiveDay);
 
 
 
@@ -660,7 +663,7 @@
                                 document.getElementById('q1active_days').textContent = totalActiveDays
                                 document.getElementById('q1max_streak').textContent = maxStreak
                                 document.getElementById('q1active_month').textContent = mostActiveMonth
-                                document.getElementById('q1active_day').textContent = mostActiveDay
+                                document.getElementById('q1active_day').textContent = mostActiveDay.slice(0, -4)
 
 
                             }
