@@ -12,11 +12,13 @@
 
 
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
     <title>LeetCode Wrapped</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4739287550570992"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 
 
 
@@ -254,6 +256,13 @@
             gap: 10%;
         }
 
+        .boxGraph{
+            margin-top: 0%;
+            display: flex;
+            justify-content: center;
+            gap: 10%;
+        }
+
         .container_second h2 {
             margin: 0;
         }
@@ -440,11 +449,97 @@
             </div>
 
         </div>
+
+        <br>
+
+        <!-- Next Para Start-->
+
+        <div class="inner-container2">
+
+            <div id="download_content_01" class="card _mainBox">
+
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <p id="userNameset01" style="margin-top: 20px; margin-left: 15px;">My Ranks</p>
+
+                </div>
+
+                <!-- <p style="margin-left: 17px;">Questions Wrapped</p> -->
+                <br>
+                <div class="boxGraph">
+
+                    <canvas id="myLineChart" style="width:100%;max-width:600px"></canvas>
+
+                </div>
+
+                <p style="text-align: right; margin-top: 10px; margin-bottom: 20px; margin-right: 10px;">
+                    <u>leetcodewrapped.info</u>
+                </p>
+
+
+
+            </div>
+
+            <div id="download_content_02" class="card _mainBox">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <p id="userNameset02" style="margin-top: 20px; margin-left: 15px;">No of Qns solved at Contest</p>
+
+                </div>
+                <!-- <p style="margin-left: 17px;">Contest Wrapped</p> -->
+                <br>
+                <div class="boxGraph">
+                    <canvas id="myPieChart" style="width:100%;max-width:600px"></canvas>
+                </div>
+                <p style="text-align: right; margin-top: 10px; margin-bottom: 20px; margin-right: 10px;">
+                    <u>leetcodewrapped.info</u>
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
 
 
 
     <script>
+
+
+        // PIEchart Publish
+        const PiexValues = ["0", "1", "2", "3", "4"];
+        let PieyValues = [];
+        const PiebarColors = [
+            "#4d4d4d",
+            "#DE6510",
+            "#1776EF",
+            "#FFC01E",
+            "#2BB15B"
+        ];
+
+        let xValues = [];
+        let yValues = [];
+
+        new Chart("myLineChart", {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    fill: false,
+                    lineTension: 0,
+                    backgroundColor: "rgba(0,0,255,1.0)",
+                    borderColor: "rgba(0,0,255,0.1)",
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                scales: {
+                    yAxes: [{ ticks: { min: 0, max: 100 } }],
+                }
+            }
+        });
+
+
+        // Before Changes
 
         const wrap_up_button = document.getElementById("wrap_up_button")
         const userName = document.getElementById('username')
@@ -550,8 +645,16 @@
                     var total_active_days = 0;
                     var total_questions_solved = 0;
                     var average_questions_contest = 0;
+                    var noOfQuestionsSolved = [0,0,0,0,0]
+                    var allContestGlobalRank = []
+                    var allContestGlobalRankXAXIS = []
 
                     console.log(data[2023]);
+
+
+
+
+
 
                     for (var key in (data.years)) {
                         contest_attended += data[(data.years)[key]].contest_attended;
@@ -575,7 +678,19 @@
                         total_active_days += data[(data.years)[key]].total_active_days;
                         total_questions_solved += data[(data.years)[key]].total_questions_solved;
                         average_questions_contest = (problems_solved_contest / contest_attended).toFixed(2);
+                        noOfQuestionsSolved[0]+=data[(data.years)[key]].noOfQuestionsSolved[0];
+                        noOfQuestionsSolved[1]+=data[(data.years)[key]].noOfQuestionsSolved[1];
+                        noOfQuestionsSolved[2]+=data[(data.years)[key]].noOfQuestionsSolved[2];
+                        noOfQuestionsSolved[3]+=data[(data.years)[key]].noOfQuestionsSolved[3];
+                        noOfQuestionsSolved[4]+=data[(data.years)[key]].noOfQuestionsSolved[4];
+                        allContestGlobalRank.push(...data[(data.years)[key]].percentileCalculateBYrank);
                     }
+
+
+                    let tempXval = []
+                    for(let i=0; i<allContestGlobalRank.length;i++) { tempXval.push(i); }
+                    allContestGlobalRankXAXIS = tempXval
+
 
                     var averageProblemsSolvedContest = average_questions_contest;
                     var contestAttended = contest_attended;
@@ -588,6 +703,7 @@
                     var mostActiveMonthContest = most_active_month_contest;
                     var totalActiveDays = total_active_days;
                     var totalQuestionsSolved = total_questions_solved;
+                    
 
                     var radioButtons = document.querySelectorAll('.radioButtons input[type="radio"]');
 
@@ -608,6 +724,13 @@
                                 totalQuestionsSolved = total_questions_solved;
 
                                 console.log("AMT: " + mostActiveDay);
+
+                                myPieChart.data.datasets[0].data = noOfQuestionsSolved;
+                                myPieChart.update();
+
+                                myLineChart.data.datasets[0].data = allContestGlobalRank;
+                                myLineChart.data.labels = allContestGlobalRankXAXIS;
+                                myLineChart.update();
 
 
 
@@ -644,10 +767,23 @@
                                 totalActiveDays = data[(data.years)[buttonId]].total_active_days
                                 totalQuestionsSolved = data[(data.years)[buttonId]].total_questions_solved
 
+                                PieyValues = data[(data.years)[buttonId]].noOfQuestionsSolved;
+                                myPieChart.data.datasets[0].data = PieyValues;
+                                myPieChart.update();
+
+                                
+
+                                yValues = data[(data.years)[buttonId]].percentileCalculateBYrank;
+                                let tempXval = []
+                                for(let i=0; i<yValues.length;i++) { tempXval.push(i); }
+                                myLineChart.data.datasets[0].data = yValues;
+                                myLineChart.data.labels = tempXval;
+                                myLineChart.update();
 
 
+                                // console.log(PieyValues);
 
-                                console.log(averageProblemsSolvedContest, contestAttended, highestRank, lowestRank, maxRating, maxStreak, mostActiveDay, mostActiveMonth, mostActiveMonthContest, totalActiveDays, totalQuestionsSolved);
+                                // console.log(averageProblemsSolvedContest, contestAttended, highestRank, lowestRank, maxRating, maxStreak, mostActiveDay, mostActiveMonth, mostActiveMonthContest, totalActiveDays, totalQuestionsSolved);
 
                                 document.getElementById('q2live_contest').textContent = contestAttended;
                                 document.getElementById('q2average_solved').textContent = averageProblemsSolvedContest;
@@ -688,6 +824,46 @@
                     document.getElementById('q1max_streak').textContent = maxStreak
                     document.getElementById('q1active_month').textContent = mostActiveMonth
                     document.getElementById('q1active_day').textContent = mostActiveDay
+                    
+                    
+
+
+                    // set Graph and Pie Chart
+
+                    let myPieChart = new Chart("myPieChart", {
+                        type: "pie",
+                        data: {
+                            labels: PiexValues,
+                            datasets: [{
+                                backgroundColor: PiebarColors,
+                                data: noOfQuestionsSolved
+                            }]
+                        }
+                    });
+
+
+                    let myLineChart = new Chart("myLineChart", {
+                        type: "line",
+                        data: {
+                            labels: allContestGlobalRankXAXIS,
+                            datasets: [{
+                                fill: false,
+                                lineTension: 0,
+                                backgroundColor: "#1776EF",
+                                borderColor: "rgba(0,0,255,0.1)",
+                                data: allContestGlobalRank
+                            }]
+                        },
+                        options: {
+                            legend: { display: false },
+                            scales: {
+                                xAxes: [{ ticks: { display: false }, gridLines: { display: false }}],
+                                yAxes: [{ ticks: { min: lowestRank, max: highestRank, reverse: true }}],
+                            }
+                        }
+                    });
+
+
                 }
 
             } catch (error) {
@@ -716,9 +892,9 @@
         }
 
 
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-        });
+        // document.addEventListener('contextmenu', function (e) {
+        //     e.preventDefault();
+        // });
 
     </script>
 
