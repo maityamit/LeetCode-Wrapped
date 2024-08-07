@@ -6,4 +6,9 @@ LeetCodeWrapped (6,500+ Users) is your go-to platform for a quick and comprehens
 What's more, you can download your stats for offline use and share your achievements on social media directly from the platform. Experience the convenience of tracking and showcasing your coding accomplishments with LeetCodeWrapped – simplifying your coding journey.
 
 
+# Behind the LC Wrapped
+
+- Amit Maity
+- Shubhi Singh
+
 
