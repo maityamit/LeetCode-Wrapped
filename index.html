@@ -39,15 +39,131 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
 
+        /* dark light mode*/
+        :root {
+            --background-color: #f5f5f5; 
+            --text-color: #333; 
+            --primary-color: #1776EF; 
+            --secondary-color: #FFC01E;
+        }
+        .dark-mode {
+            --background-color:#1D1D1D; 
+            --text-color: #fff; 
+        }
         body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+        }
+        /* .container {
+            background-color: var(--background-color);
+            color: var(--text-color);
+        } */
+        /* .button {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+        }
+        .button:hover {
+            background-color: var(--secondary-color);
+        } */
+
+        /* body {
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
-        }
+        } */
+
+        
 
         img {
             width: 4%;
             height: 4%;
         }
+        .dark-mode #first_container .cont p {
+            color: #fff !important;
+        }
+        .dark-mode .button {
+            font-size: 20px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 25px;
+            background-color: #ffffff;
+            color: #FFC01E;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+        }
+
+        /* .dark-mode .button:hover {
+            background-color: #535353;
+        } */
+
+        .dark-mode .button1 {
+            font-size: 15px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: #5d5d5d;
+            color: #FFC01E;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .dark-mode .radioButtons label span:before {
+            border: 1px solid #fff; 
+        }
+        .dark-mode .radioButtons label span:after {
+            background: #fff;
+        }
+        .dark-mode .card {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        .dark-mode .card h1, .dark-mode .card h2, .dark-mode .card p {
+            color: #fff;
+        }
+        
+        .dark-mode .card .box h1, .dark-mode .card .box1 h1 {
+            color: #fff;
+        }
+        
+        .dark-mode .card .box p, .dark-mode .card .box1 p {
+            color: #ccc;
+        } 
+
+        #mode-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+        }
+
+#mode-toggle:hover {
+    opacity: 0.5;
+}
+
+#mode-toggle span {
+    font-size: 3em;
+    padding-right:0.5em;
+
+}
+
+.dark-mode #sun-icon {
+    display: none;
+}
+
+.dark-mode #moon-icon {
+    display: inline;
+}
+
+#moon-icon{
+    display: none;
+}
+        
+        
 
 
         .container {
@@ -229,7 +345,7 @@
             box-sizing: border-box;
             /* Include padding and border in the width */
         }
-
+        
         ._mainBox {
             flex: 1;
         }
@@ -331,14 +447,19 @@
 
     <div style="display: flex; justify-content: space-between; align-items: center;">
         <img src="images/image 1.png">
-        <a href="https://www.buymeacoffee.com/maityamitca" target="_blank"
-            style="margin-right: 5%; text-decoration: none; color: #B1BAB8;">Buy me Coffee</a>
+        <!-- <a href="https://www.buymeacoffee.com/maityamitca" target="_blank"
+            style="margin-right: 5%; text-decoration: none; color: #B1BAB8;">Buy me Coffee</a> -->
+    <!-- dark light mode button-->
+        <button id="mode-toggle" aria-label="Toggle dark mode">
+            <span id="sun-icon">🌞</span>
+            <span id="moon-icon">🌙</span>
+        </button>
 
     </div>
 
     <div id="first_container" class="container">
         <h1><span style="color: #1776EF;">LeetCode</span> <span style="color: #2BB15B;">Wrapped</span></h1>
-        <p style="font-size: 24px; color: rgb(0, 0, 0); margin-bottom: 20px;">Get your LeetCode Stats</p>
+        <div class="cont"><p style="font-size: 24px; color: rgb(0, 0, 0); margin-bottom: 20px;">Get your LeetCode Stats</p></div>
         <button id="wrapButton" class="button" onclick="showInput()"><b>Let's Start</b></button>
         <div id="inputSection" style="display: none;">
             <input type="text" id="username" placeholder="Enter your username">
@@ -458,7 +579,7 @@
 
             <div id="download_content_01" class="card _mainBox">
 
-                <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="rank" style="display: flex; justify-content: space-between; align-items: center;">
                     <p id="userNameset01" style="margin-top: 20px; margin-left: 15px;">My Ranks</p>
 
                 </div>
@@ -502,7 +623,13 @@
 
 
     <script>
-
+    
+    //Dark light mode
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+    });
+    
 
         // PIEchart Publish
         const PiexValues = ["0", "1", "2", "3", "4"];
@@ -862,7 +989,6 @@
                             }
                         }
                     });
-
 
                 }
 
